@@ -4,6 +4,7 @@ import {
   Animated,
   ListView,
   Dimensions,
+  Platform,
   PanResponder,
   LayoutAnimation,
   InteractionManager,
@@ -39,7 +40,7 @@ class Row extends React.Component {
         } else if (Platform.OS === 'android') {
           layout.pageY -= 88;
         }
-        
+
         this.props.onRowActive({
           layout,
           touch: e.nativeEvent,
