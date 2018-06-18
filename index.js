@@ -35,11 +35,7 @@ class Row extends React.Component {
         const layout = { frameHeight, pageY }
 
         // Added custom offset
-        if (Platform.OS === 'ios') {
-          layout.pageY -= 42;
-        } else if (Platform.OS === 'android') {
-          layout.pageY -= 42;
-        }
+        layout.pageY -= this.props.offset || 0
 
         this.props.onRowActive({
           layout,
